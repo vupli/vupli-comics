@@ -6,13 +6,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env jsdom",
-    "eject": "react-scripts eject"
+    "deploy": "firebase deploy"
   },
   "dependencies": {
+    "firebase": "^4.0.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "styled-components": "^2.0.0"
   },
   "devDependencies": {
+    "firebase-tools": "^3.9.0",
     "react-scripts": "1.0.7"
   }
 }
