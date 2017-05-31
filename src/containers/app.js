@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Layout } from 'antd';
 
 import Home from './home';
 import Comics from './comics';
@@ -12,16 +13,18 @@ import './app.css';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <Layout>
         <Header/>
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/comics" component={Comics}/>
-          <Route path="/comics/:id" component={Comic}/>
-          <Route component={NoMatch}/>
-        </Switch>
+        <Layout.Content>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/comics" component={Comics}/>
+            <Route path="/comics/:id" component={Comic}/>
+            <Route component={NoMatch}/>
+          </Switch>
+        </Layout.Content>
         <Footer/>
-      </div>
+      </Layout>
     );
   }
 }

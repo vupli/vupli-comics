@@ -9,6 +9,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "antd": "^2.10.4",
     "firebase": "^4.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

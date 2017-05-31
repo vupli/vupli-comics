@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Row } from 'antd';
 
 import './home.css';
 
@@ -6,7 +7,11 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <p>Home</p>
+        <Row>
+          <Col span={24}>
+            <p>Home</p>
+          </Col>
+        </Row>
       </div>
     );
   }

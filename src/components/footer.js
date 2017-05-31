@@ -1,12 +1,13 @@
 import React from 'react';
+import { Layout } from 'antd';
 
 import './footer.css';
 
 const Footer = (props) => {
   return (
-    <footer>
+    <Layout.Footer>
       Footer
-    </footer>
+    </Layout.Footer>
   );
 };
 
