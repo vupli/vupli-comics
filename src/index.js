@@ -6,6 +6,7 @@ import firebase from 'firebase';
 import App from './containers/app';
 
 import './index.css';
+import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Layout } from 'antd';
 
 import './footer.css';
+import {Segment} from "semantic-ui-react";
 
 const Footer = (props) => {
   return (
-    <Layout.Footer>
+    <Segment>
       Footer
-    </Layout.Footer>
+    </Segment>
   );
 };
 
