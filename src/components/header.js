@@ -1,28 +1,66 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
+
 import './header.css';
 
 class Header extends React.Component {
-  state = { activeItem: '' };
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeItem: props.location.pathname
+    };
+
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
+
+  handleItemClick(e, { name }) {
+    this.setState({
+      activeItem: name
+    });
+
+    this.props.history.push(name);
+  }
 
   render() {
-    const { activeItem } = this.state;
-
     return (
-      <div>
-        <Menu pointing secondary>
-          <Menu.Item />
-          <Link to="/"><Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} /></Link>
-          <Link to="/comics"><Menu.Item name='comics' active={activeItem === 'comics'} onClick={this.handleItemClick} /></Link>
-          <Link to="/about"><Menu.Item name='about me' active={activeItem === 'about me'} onClick={this.handleItemClick} /></Link>
-        </Menu>
-      </div>
-        );
-};}
+      <Menu stackable size="large">
 
-export default Header;
+        <Menu.Item>
+          <b>Vupli Comics</b>
+        </Menu.Item>
+
+        <Menu.Item
+          name='/'
+          active={this.state.activeItem === '/'}
+          onClick={this.handleItemClick}
+        >
+          Home
+        </Menu.Item>
+
+        <Menu.Item
+          name='/comics'
+          active={this.state.activeItem === '/comics'}
+          onClick={this.handleItemClick}
+        >
+          Comics
+        </Menu.Item>
+
+        <Menu.Item
+          name='/about'
+          active={this.state.activeItem === '/about'}
+          onClick={this.handleItemClick}
+        >
+          About
+        </Menu.Item>
+
+      </Menu>
+    );
+  };
+}
+
+export default withRouter(Header);
 
 

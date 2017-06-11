@@ -1,12 +1,14 @@
 import React from 'react';
+import { Container, Segment } from 'semantic-ui-react';
 
 import './footer.css';
-import {Segment} from "semantic-ui-react";
 
 const Footer = (props) => {
   return (
     <Segment>
-      Footer
+      <Container textAlign="center">
+        Vupli Comics © 2017
+      </Container>
     </Segment>
   );
 };

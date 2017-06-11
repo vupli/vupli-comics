@@ -1,20 +1,15 @@
-/**
- * Created by vupli on 6/10/2017.
- */
 import React from 'react';
 
 import './about.css';
-import {Container, Header} from "semantic-ui-react";
 
-const About = () => {
-  return (
-    <Container text>
+class About extends React.Component {
+  render() {
+    return (
       <div>
-
-          Info about me
+        <p>About</p>
       </div>
-    </Container>
-  );
-};
+    );
+  }
+}
 
 export default About;
