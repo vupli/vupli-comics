@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
+import { Icon, Menu } from 'semantic-ui-react';
 
 import './header.css';
 
@@ -29,6 +29,7 @@ class Header extends React.Component {
       <Menu stackable size="large">
 
         <Menu.Item>
+          <Icon circular inverted color="teal" name="lightning"/>
           <b>Vupli Comics</b>
         </Menu.Item>
 

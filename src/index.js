@@ -1,17 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import createSagaMiddleware from 'redux-saga';
+import { BrowserRouter } from 'react-router-dom';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
+import reducer from './reducers';
 import App from './containers/app';
+import comicsSaga from './sagas/comics';
 
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+
+sagaMiddleware.run(comicsSaga);
+
 ReactDOM.render(
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );
 

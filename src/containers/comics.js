@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './comics.css';
 
@@ -12,4 +13,4 @@ class Comics extends React.Component {
   }
 }
 
-export default Comics;
+export default connect()(Comics);
